@@ -1,0 +1,17 @@
+@import './variables.scss';
+.dial-pad {
+    width: 50%;
+    padding: 10px;
+    margin: 30px auto;
+    border: 2px solid black;
+    background-color: $colorGray;
+    .dial-pad_row {
+        display: flex;
+        justify-content: space-between;
+    }
+    button {
+        width: 32%;
+        margin: 2px 0;
+        height: 40px;
+    }
+}

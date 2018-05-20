@@ -1,0 +1,21 @@
+@import './variables.scss';
+.number-display {
+    display: flex;
+    justify-content: center;
+   
+    .number-display_message {
+        width: 45%;
+        border: 5px solid black;
+        border-radius: 15px;
+        background-color: $colorGrayishGreen;
+        height: 70px;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .number-display_message {
+            width: 70%;
+        }
+    }
+}

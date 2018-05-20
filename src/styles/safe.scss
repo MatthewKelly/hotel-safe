@@ -1,0 +1,25 @@
+@import './variables.scss';
+.safe {
+    background-color: $backgroundColor;
+
+    .col-40 {
+        width: 40%;
+        display: inline-block;
+    }
+
+    .col-60 {
+        width: 60%;
+        display: inline-block;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .col-40 {
+            width: 100%;
+        }
+
+        .col-60 {
+            width: 100%;
+        }
+    }
+}
+
