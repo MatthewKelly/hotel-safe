@@ -13,7 +13,7 @@ const rootReducer = (state = initialState, action) => {
         }
         return { ...state, keypad: [...state.keypad, action.payload], invalid: false};
     case KEYPAD_CLEAR :
-        return { ...state, keypad : []};
+        return { ...state, keypad : [], invalid: false};
     case KEYPAD_ENTER: 
         // new code
         if (!state.doorLocked && !state.savedCode && state.keypad.length === 4) {
