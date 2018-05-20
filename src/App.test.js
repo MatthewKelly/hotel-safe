@@ -19,14 +19,14 @@ it('Should unlock door when correct events received', () => {
     store.dispatch(enterAction);
 
     // expect door to be locked
-    expect(store.getState().doorLocked).toEqual(true);
+    expect(store.getState().safe.doorLocked).toEqual(true);
 
     enterKeys(store, ['1', '2', '3', '4']);
 
     store.dispatch(enterAction);
 
     // expect door to be unlocked
-    expect(store.getState().doorLocked).toEqual(false);
+    expect(store.getState().safe.doorLocked).toEqual(false);
 });
 
 it('Should be in invalid state if wrong keys are entered', () => {
@@ -37,15 +37,15 @@ it('Should be in invalid state if wrong keys are entered', () => {
     store.dispatch(enterAction);
 
     // expect door to be locked
-    expect(store.getState().doorLocked).toEqual(true);
+    expect(store.getState().safe.doorLocked).toEqual(true);
 
     enterKeys(store, ['1', '2', '3', '5']);
 
     store.dispatch(enterAction);
 
     // expect door to be unlocked
-    expect(store.getState().doorLocked).toEqual(true);
-    expect(store.getState().invalid).toEqual(true);
+    expect(store.getState().safe.doorLocked).toEqual(true);
+    expect(store.getState().safe.invalid).toEqual(true);
 });
 
 it('Should not lock door if theres less than 4 digits entered', function() {
@@ -56,7 +56,7 @@ it('Should not lock door if theres less than 4 digits entered', function() {
     // press enter
     store.dispatch(enterAction);
 
-    expect(store.getState().doorLocked).toEqual(false);
+    expect(store.getState().safe.doorLocked).toEqual(false);
 });
 
 
@@ -68,7 +68,7 @@ it('Clear action should clear keys', function() {
     // press enter
     store.dispatch(enterAction);
 
-    expect(store.getState().keypad).toEqual([]);
+    expect(store.getState().safe.keypad).toEqual([]);
 });
 
 it('Should take a maximum of 4 digits', function() {
@@ -76,6 +76,6 @@ it('Should take a maximum of 4 digits', function() {
     // enter 6 keys
     enterKeys(store, ['1', '2', '3', '4', '5', '6']);
     // expect only the first four to be registered
-    expect(store.getState().keypad).toEqual(['1','2','3','4']);
+    expect(store.getState().safe.keypad).toEqual(['1','2','3','4']);
 })  
 
