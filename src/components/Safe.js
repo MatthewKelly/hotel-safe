@@ -6,7 +6,7 @@ import IndicatorLight from "./IndicatorLight";
 import { connect } from "react-redux";
 import { keypadNumberEntered, keypadClear, keypadEnter } from '../actions/index';
 const mapStateToProps = state => {
-  return { keypad: state.keypad, doorLocked: state.doorLocked, invalid: state.invalid };
+  return { keypad: state.safe.keypad, doorLocked: state.safe.doorLocked, invalid: state.safe.invalid };
 };
 
 const mapDispatchToProps = dispatch => {
