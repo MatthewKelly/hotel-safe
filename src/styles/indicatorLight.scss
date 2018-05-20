@@ -1,3 +1,4 @@
+@import './variables.scss';
 .indicator-light {
     display: flex;
     justify-content: center;
@@ -11,11 +12,11 @@
         border: 2px solid black;
 
         &.green {
-            background-color: green;
+            background-color: $colorGreen;
         }
     
         &.red {
-            background-color: red;
+            background-color: $colorRed;
         }
     }
 }
