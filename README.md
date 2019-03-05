@@ -1,4 +1,4 @@
-Safe app
+Hotel safe app
 - Simulates behavior of opening a hotel safe.   Created with create-react-app.
 
 - To install: yarn install
